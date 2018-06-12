@@ -2,6 +2,7 @@ package br.univille.projdacs20181.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,11 +18,11 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Consulta {
-	public ArrayList<ProcedimentoRealizado> getListaProcedimentos() {
+	public List<ProcedimentoRealizado> getListaProcedimentos() {
 		return listaProcedimentos;
 	}
 
-	public void setListaProcedimentos(ArrayList<ProcedimentoRealizado> listaProcedimentos) {
+	public void setListaProcedimentos(List<ProcedimentoRealizado> listaProcedimentos) {
 		this.listaProcedimentos = listaProcedimentos;
 	}
 
@@ -41,7 +42,7 @@ public class Consulta {
 	
 	@OneToMany(cascade=CascadeType.ALL)
     @JoinColumn(name="consulta_id")
-    private ArrayList<ProcedimentoRealizado> listaProcedimentos = new ArrayList<ProcedimentoRealizado>();
+    private List<ProcedimentoRealizado> listaProcedimentos = new ArrayList<ProcedimentoRealizado>();
 	
 
 	public long getId() {
